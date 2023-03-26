@@ -5,5 +5,12 @@
     padding: 4rem 2rem;
     align-self: center;
     width: 90%;
+    @include flexbox(column, center, flex-start);
+}
+
+.inner-container {
+    width: 100%;
+    max-width: 100rem;
+    align-self: center;
     @include flexbox(column, flex-start, flex-start);
 }

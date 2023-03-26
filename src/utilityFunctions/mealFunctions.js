@@ -20,7 +20,7 @@ export const getMealInfo = (meal, allIngredients) => {
 
         ingredientInfo[0].groups
             ? ingredientGroups.push(...ingredientInfo[0].groups)
-            : ingredientGroups.push('Normal');
+            : ingredientGroups.push('meat');
 
         const ingredientOptions = ingredientInfo[0].options;
 
@@ -31,4 +31,36 @@ export const getMealInfo = (meal, allIngredients) => {
     });
 
     return [prices, [...new Set(ingredientGroups)]];
+};
+
+export const sortMeals = (menu, sortType, sortDirection) => {
+    const menuCopy = [...menu];
+
+    if (sortType === 'name') {
+        if (sortDirection === 'ascending') {
+            menuCopy.sort((a, b) =>
+                a.name > b.name ? -1 : b.name > a.name ? 1 : 0
+            );
+        } else {
+            menuCopy.sort((a, b) =>
+                a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+            );
+        }
+    } else {
+        if (sortDirection === 'ascending') {
+            menuCopy.sort((a, b) => b.info[sortType] - a.info[sortType]);
+        } else {
+            menuCopy.sort((a, b) => a.info[sortType] - b.info[sortType]);
+        }
+    }
+
+    return menuCopy;
+};
+
+export const filterMeals = (menu, parameter) => {
+    return menu.filter(
+        (meal) =>
+            !meal.info.groups.includes('meat') &&
+            meal.info.groups.includes(parameter)
+    );
 };

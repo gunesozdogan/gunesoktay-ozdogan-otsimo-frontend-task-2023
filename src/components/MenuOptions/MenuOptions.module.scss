@@ -1,0 +1,94 @@
+@import '../../index.scss';
+
+.container {
+    @include flexbox(row, center, space-between);
+    width: 100%;
+    padding: 2rem 4rem 0 4rem;
+    max-width: 100rem;
+}
+
+.button-container {
+    background-color: transparent;
+    position: relative;
+    width: 25%;
+}
+
+.sort-button,
+.filter-button {
+    background-color: transparent;
+    border: none;
+    color: $helper-font-color;
+    font-size: 2rem;
+    cursor: pointer;
+    @include flexbox(row, center, flex-start, 0.5rem);
+    border-bottom: 2px solid $sec-font-color;
+    width: 100%;
+}
+
+.filter-button {
+    justify-content: flex-end;
+}
+
+.sort-button span,
+.filter-button span {
+    padding: 1rem 2rem;
+}
+
+.sort-button:hover,
+.filter-button:hover {
+    color: #fff;
+}
+
+.sort-button:hover .svg,
+.filter-button:hover .svg {
+    stroke: #fff;
+}
+
+.svg {
+    width: 2.4rem;
+    height: 2.4rem;
+    stroke: $helper-font-color;
+}
+
+.sort-selection-container,
+.filter-selection-container {
+    @include flexbox(column, flex-start, flex-start, 0);
+    position: absolute;
+    background-color: $navbar-main-color;
+    padding: 2rem;
+    z-index: 999;
+    width: 100%;
+    border: 2px solid $sec-font-color;
+    border-top: none;
+}
+
+.sort-selection,
+.filter-selection {
+    @include flexbox(row, center, flex-start, 0.5rem);
+    color: $helper-font-color;
+    font-size: 1.8rem;
+    border-bottom: 1px solid $sec-font-color;
+    width: 100%;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.filter-selection {
+    justify-content: flex-end;
+}
+
+.sort-selection:hover,
+.filter-selection:hover {
+    color: #fff;
+    border-bottom: 1px solid $main-font-color;
+}
+
+.sort-selection-active,
+.filter-selection-active {
+    color: #fff;
+    background-color: $main-font-color-dark;
+}
+
+.sort-selection svg {
+    fill: $helper-font-color;
+}

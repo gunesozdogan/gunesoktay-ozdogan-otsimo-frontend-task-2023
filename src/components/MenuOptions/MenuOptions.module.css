@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: 100%;
+  padding: 2rem 4rem 0 4rem;
+  max-width: 100rem;
+}
+
+.button-container {
+  background-color: transparent;
+  position: relative;
+  width: 25%;
+}
+
+.sort-button,
+.filter-button {
+  background-color: transparent;
+  border: none;
+  color: #ddd;
+  font-size: 2rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  border-bottom: 2px solid #747474;
+  width: 100%;
+}
+
+.filter-button {
+  justify-content: flex-end;
+}
+
+.sort-button span,
+.filter-button span {
+  padding: 1rem 2rem;
+}
+
+.sort-button:hover,
+.filter-button:hover {
+  color: #fff;
+}
+
+.sort-button:hover .svg,
+.filter-button:hover .svg {
+  stroke: #fff;
+}
+
+.svg {
+  width: 2.4rem;
+  height: 2.4rem;
+  stroke: #ddd;
+}
+
+.sort-selection-container,
+.filter-selection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+  position: absolute;
+  background-color: #222;
+  padding: 2rem;
+  z-index: 999;
+  width: 100%;
+  border: 2px solid #747474;
+  border-top: none;
+}
+
+.sort-selection,
+.filter-selection {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.5rem;
+  color: #ddd;
+  font-size: 1.8rem;
+  border-bottom: 1px solid #747474;
+  width: 100%;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.filter-selection {
+  justify-content: flex-end;
+}
+
+.sort-selection:hover,
+.filter-selection:hover {
+  color: #fff;
+  border-bottom: 1px solid #ff652f;
+}
+
+.sort-selection-active,
+.filter-selection-active {
+  color: #fff;
+  background-color: #bf481f;
+}
+
+.sort-selection svg {
+  fill: #ddd;
+}

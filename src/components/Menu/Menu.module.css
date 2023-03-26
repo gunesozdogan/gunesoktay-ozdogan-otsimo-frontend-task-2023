@@ -5,6 +5,17 @@
   width: 90%;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.inner-container {
+  width: 100%;
+  max-width: 100rem;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;

@@ -12,6 +12,7 @@
   margin: 0 auto;
   cursor: pointer;
   text-decoration: none;
+  box-shadow: 0 2px 12px -3px gray;
 }
 
 .container:active,

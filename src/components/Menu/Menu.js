@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import MenuItem from '../MenuItem/MenuItem';
+import MenuOptions from '../MenuOptions/MenuOptions';
+
 import { getMenu } from '../../utilityFunctions/API';
 import { menuActions } from '../../store/menuSlice';
 import { ingredientsActions } from '../../store/ingredientsSlice';
@@ -11,7 +14,7 @@ import styles from './Menu.module.css';
 
 const Menu = () => {
     const dispatch = useDispatch();
-    const mealsState = useSelector((state) => state.menu.meals);
+    const displayedMenu = useSelector((state) => state.menu.displayedMeals);
     const mealInfo = {};
 
     useEffect(() => {
@@ -34,6 +37,7 @@ const Menu = () => {
             });
 
             dispatch(menuActions.setInfo(mealInfo));
+            dispatch(menuActions.getCalculatedMealPrices(mealInfo));
         };
 
         setMenuAndIngredients();
@@ -41,9 +45,17 @@ const Menu = () => {
 
     return (
         <div className={styles.container}>
-            {mealsState.map((meal) => {
-                return <MenuItem meal={meal} key={meal.id} />;
-            })}
+            <MenuOptions />
+            <div className={styles['inner-container']}>
+                {displayedMenu.map((meal) => {
+                    return (
+                        <MenuItem
+                            meal={meal}
+                            key={meal.id}
+                        />
+                    );
+                })}
+            </div>
         </div>
     );
 };
