@@ -1,0 +1,65 @@
+.container:link,
+.container:visited {
+  border: 2px solid #747474;
+  padding: 2rem 4rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  max-width: 100rem;
+  margin: 0 auto;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.container:active,
+.container:hover {
+  background-color: #333;
+}
+
+.name {
+  font-size: 2.2rem;
+  color: #ff652f;
+}
+
+.container-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+  min-width: 40rem;
+}
+
+.ingredients-container {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  list-style: none;
+  font-size: 1.8rem;
+  color: #ddd;
+  gap: 2rem;
+}
+
+.ingredient-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ingredient-quantity {
+  font-size: 1.5rem;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 3rem;
+  color: #14a76c;
+}

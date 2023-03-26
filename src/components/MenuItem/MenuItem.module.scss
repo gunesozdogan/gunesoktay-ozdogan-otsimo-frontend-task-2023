@@ -1,0 +1,51 @@
+@import '../../index.scss';
+
+.container:link,
+.container:visited {
+    border: 2px solid $sec-font-color;
+    padding: 2rem 4rem;
+    width: 100%;
+    @include flexbox(row, center, space-between);
+    max-width: 100rem;
+    margin: 0 auto;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.container:active,
+.container:hover {
+    background-color: #333;
+}
+
+.name {
+    font-size: 2.2rem;
+    color: $main-font-color;
+}
+
+.container-left {
+    @include flexbox(column, flex-start, flex-start, 2rem);
+    min-width: 40rem;
+}
+
+.ingredients-container {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    list-style: none;
+    font-size: 1.8rem;
+    color: $helper-font-color;
+    gap: 2rem;
+}
+
+.ingredient-container {
+    @include flexbox(column, flex-start, center, 1rem);
+}
+
+.ingredient-quantity {
+    font-size: 1.5rem;
+}
+
+.price-container {
+    @include flexbox();
+    font-size: 3rem;
+    color: $navbar-sec-color;
+}

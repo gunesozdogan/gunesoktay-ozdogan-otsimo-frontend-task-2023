@@ -1,0 +1,50 @@
+@import '../../index.scss';
+
+.container {
+    background-color: $navbar-main-color;
+    min-height: 12rem;
+    padding: 3rem;
+    @include flexbox(column, center, space-between, 2.5rem);
+}
+
+.header {
+    color: $navbar-sec-color;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.navbar {
+    @include flexbox(row, center, space-around, 3rem);
+}
+
+.navlink:link,
+.navlink:visited {
+    text-decoration: none;
+    color: $helper-font-color;
+    font-size: 2rem;
+}
+
+.navlink:active,
+.navlink:hover {
+    color: $navbar-sec-color;
+}
+
+@media (max-width: 1200px) {
+    .container {
+        @include flexbox(column, center, flex-start, 2rem);
+        padding: 2rem;
+    }
+
+    .header {
+        font-size: 3.5rem;
+    }
+
+    .navbar {
+        @include flexbox(row, center, space-around, 2rem);
+    }
+
+    .navlink:link,
+    .navlink:visited {
+        font-size: 1.8rem;
+    }
+}

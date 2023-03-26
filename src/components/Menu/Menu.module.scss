@@ -1,0 +1,9 @@
+@import '../../index.scss';
+
+.container {
+    flex: 1;
+    padding: 4rem 2rem;
+    align-self: center;
+    width: 90%;
+    @include flexbox(column, flex-start, flex-start);
+}

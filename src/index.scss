@@ -1,0 +1,20 @@
+$main-background-color: #272727;
+$sec-background-color: #172431;
+$main-font-color: #ff652f;
+$sec-font-color: #747474;
+$helper-font-color: #ddd;
+$navbar-main-color: #222;
+$navbar-sec-color: #14a76c;
+
+@mixin flexbox(
+    $direction: row,
+    $align-items: center,
+    $justify-content: center,
+    $gap: 2rem
+) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align-items;
+    justify-content: $justify-content;
+    gap: $gap;
+}
