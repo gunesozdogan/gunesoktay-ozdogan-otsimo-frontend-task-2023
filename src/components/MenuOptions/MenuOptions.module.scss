@@ -5,6 +5,7 @@
     width: 100%;
     padding: 2rem 4rem 0 4rem;
     max-width: 100rem;
+    min-width: 65rem;
 }
 
 .button-container {
@@ -23,6 +24,7 @@
     @include flexbox(row, center, flex-start, 0.5rem);
     border-bottom: 2px solid $sec-font-color;
     width: 100%;
+    min-width: 14.5rem;
 }
 
 .filter-button {
@@ -91,4 +93,19 @@
 
 .sort-selection svg {
     fill: $helper-font-color;
+}
+
+@media (max-width: 768px) {
+    .container {
+        min-width: unset;
+        padding: 0;
+    }
+
+    .button-container {
+        width: 50%;
+    }
+
+    .sort-selection-container {
+        width: 100%;
+    }
 }

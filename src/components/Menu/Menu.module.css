@@ -8,6 +8,7 @@
   justify-content: flex-start;
   gap: 2rem;
   width: 90%;
+  min-width: 65rem;
 }
 
 .inner-container {
@@ -19,4 +20,10 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    min-width: unset;
+  }
 }

@@ -6,6 +6,7 @@
     align-self: center;
     @include flexbox(column, center, flex-start);
     width: 90%;
+    min-width: 65rem;
 }
 
 .inner-container {
@@ -13,4 +14,10 @@
     max-width: 100rem;
     align-self: center;
     @include flexbox(column, flex-start, flex-start);
+}
+
+@media (max-width: 768px) {
+    .container {
+        min-width: unset;
+    }
 }

@@ -26,6 +26,7 @@ const MenuOptions = () => {
 
     const sortOptionHandler = () => {
         setSortVisible(!sortVisible);
+        setFilterVisible(false);
     };
 
     const sortHandler = (e) => {
@@ -47,6 +48,7 @@ const MenuOptions = () => {
 
     const filterOptionHandler = () => {
         setFilterVisible(!filterVisible);
+        setSortVisible(false);
     };
 
     const filterHandler = (e) => {

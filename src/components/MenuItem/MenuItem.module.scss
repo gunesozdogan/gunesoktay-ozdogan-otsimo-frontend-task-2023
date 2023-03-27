@@ -11,6 +11,7 @@
     cursor: pointer;
     text-decoration: none;
     box-shadow: 0 2px 12px -3px gray;
+    min-width: 65rem;
 }
 
 .container:active,
@@ -49,4 +50,29 @@
     @include flexbox();
     font-size: 3rem;
     color: $navbar-sec-color;
+    min-width: 16.5rem;
+}
+
+@media (max-width: 768px) {
+    .container:link,
+    .container:visited {
+        width: 100%;
+        flex-direction: column;
+        min-width: unset;
+        gap: 3rem;
+    }
+
+    .container-left {
+        min-width: unset;
+        width: 100%;
+    }
+
+    .ingredients-container {
+        grid-template-columns: repeat(3, auto);
+    }
+
+    .price-container {
+        align-self: flex-start;
+        justify-content: flex-start;
+    }
 }
