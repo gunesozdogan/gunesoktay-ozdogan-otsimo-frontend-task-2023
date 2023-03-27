@@ -19,6 +19,10 @@
     font-size: 62.5%;
 }
 
+html {
+    overflow-y: scroll;
+}
+
 .outer-container {
     @include flexbox(column, stretch, space-between, 0);
     background-color: $main-background-color;

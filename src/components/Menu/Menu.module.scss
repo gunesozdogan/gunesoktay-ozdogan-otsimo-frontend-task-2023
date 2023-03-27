@@ -4,8 +4,8 @@
     flex: 1;
     padding: 4rem 2rem;
     align-self: center;
-    width: 90%;
     @include flexbox(column, center, flex-start);
+    width: 90%;
 }
 
 .inner-container {

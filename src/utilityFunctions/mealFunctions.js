@@ -18,9 +18,11 @@ export const getMealInfo = (meal, allIngredients) => {
             allIngredients
         );
 
-        ingredientInfo[0].groups
-            ? ingredientGroups.push(...ingredientInfo[0].groups)
-            : ingredientGroups.push('meat');
+        if (!ingredientInfo[0].groups) {
+            ingredientGroups.push(...['non-vegan', 'non-vegetarian']);
+        } else if (!ingredientInfo[0].groups.includes('vegan')) {
+            ingredientGroups.push('non-vegan');
+        }
 
         const ingredientOptions = ingredientInfo[0].options;
 
@@ -58,9 +60,11 @@ export const sortMeals = (menu, sortType, sortDirection) => {
 };
 
 export const filterMeals = (menu, parameter) => {
-    return menu.filter(
-        (meal) =>
-            !meal.info.groups.includes('meat') &&
-            meal.info.groups.includes(parameter)
-    );
+    if (parameter === 'vegan') {
+        return menu.filter((meal) => !meal.info.groups.includes('non-vegan'));
+    } else if (parameter === 'vegetarian') {
+        return menu.filter(
+            (meal) => !meal.info.groups.includes('non-vegetarian')
+        );
+    }
 };

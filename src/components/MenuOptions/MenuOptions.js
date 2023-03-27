@@ -9,22 +9,26 @@ import priceAscendingIcon from '../../assets/priceAscending.svg';
 import priceDescendingIcon from '../../assets/priceDescending.svg';
 
 import { sortMeals } from '../../utilityFunctions/mealFunctions';
+import { filterMeals } from '../../utilityFunctions/mealFunctions';
 import { menuActions } from '../../store/menuSlice';
 
 const MenuOptions = () => {
     const [sortVisible, setSortVisible] = useState(false);
     const [sortDirection, setSortDirection] = useState();
     const [sortType, setSortType] = useState();
+
     const [filterVisible, setFilterVisible] = useState(false);
+    const [filterType, setFilterType] = useState('all');
 
     const dispatch = useDispatch();
     const displayedMeals = useSelector((state) => state.menu.displayedMeals);
+    const allMeals = useSelector((state) => state.menu.meals);
 
-    const sortOptionClickHandler = () => {
+    const sortOptionHandler = () => {
         setSortVisible(!sortVisible);
     };
 
-    const sortSelectionClickHandler = (e) => {
+    const sortHandler = (e) => {
         const [type, direction] = e.target
             .closest('div')
             .getAttribute('data-key')
@@ -32,6 +36,7 @@ const MenuOptions = () => {
 
         setSortDirection(direction);
         setSortType(type);
+        setSortVisible(!sortVisible);
 
         dispatch(
             menuActions.setDisplayedMeals(
@@ -40,15 +45,28 @@ const MenuOptions = () => {
         );
     };
 
-    const filterOptionClickHandler = () => {
+    const filterOptionHandler = () => {
         setFilterVisible(!filterVisible);
+    };
+
+    const filterHandler = (e) => {
+        const type = e.target.closest('div').getAttribute('data-key');
+
+        setFilterType(type);
+        setFilterVisible(!filterVisible);
+
+        type === 'all'
+            ? dispatch(menuActions.setDisplayedMeals(allMeals))
+            : dispatch(
+                  menuActions.setDisplayedMeals(filterMeals(allMeals, type))
+              );
     };
 
     return (
         <div className={styles.container}>
             <div
                 className={styles['button-container']}
-                onClick={sortOptionClickHandler}
+                onClick={sortOptionHandler}
             >
                 <button className={styles['sort-button']}>
                     <span>Sort by</span>
@@ -70,7 +88,7 @@ const MenuOptions = () => {
                                     ? `${styles['sort-selection-active']} ${styles['sort-selection']}`
                                     : styles['sort-selection']
                             }
-                            onClick={sortSelectionClickHandler}
+                            onClick={sortHandler}
                             data-key={`name-${
                                 sortDirection === 'ascending'
                                     ? 'descending'
@@ -93,7 +111,7 @@ const MenuOptions = () => {
                                     ? `${styles['sort-selection-active']} ${styles['sort-selection']}`
                                     : styles['sort-selection']
                             }
-                            onClick={sortSelectionClickHandler}
+                            onClick={sortHandler}
                             data-key={`low-${
                                 sortDirection === 'ascending'
                                     ? 'descending'
@@ -116,7 +134,7 @@ const MenuOptions = () => {
                                     ? `${styles['sort-selection-active']} ${styles['sort-selection']}`
                                     : styles['sort-selection']
                             }
-                            onClick={sortSelectionClickHandler}
+                            onClick={sortHandler}
                             data-key={`medium-${
                                 sortDirection === 'ascending'
                                     ? 'descending'
@@ -139,7 +157,7 @@ const MenuOptions = () => {
                                     ? `${styles['sort-selection-active']} ${styles['sort-selection']}`
                                     : styles['sort-selection']
                             }
-                            onClick={sortSelectionClickHandler}
+                            onClick={sortHandler}
                             data-key={`high-${
                                 sortDirection === 'ascending'
                                     ? 'descending'
@@ -164,7 +182,7 @@ const MenuOptions = () => {
             <div className={styles['button-container']}>
                 <button
                     className={styles['filter-button']}
-                    onClick={filterOptionClickHandler}
+                    onClick={filterOptionHandler}
                 >
                     <span>Filter by</span>
                     <svg
@@ -181,20 +199,35 @@ const MenuOptions = () => {
                 {filterVisible ? (
                     <div className={styles['filter-selection-container']}>
                         <div
-                            className={styles['filter-selection']}
-                            onClick={sortSelectionClickHandler}
+                            className={
+                                filterType === 'all'
+                                    ? `${styles['filter-selection-active']} ${styles['filter-selection']}`
+                                    : styles['filter-selection']
+                            }
+                            onClick={filterHandler}
+                            data-key="all"
                         >
                             <span>All</span>
                         </div>
                         <div
-                            className={styles['filter-selection']}
-                            onClick={sortSelectionClickHandler}
+                            className={
+                                filterType === 'vegan'
+                                    ? `${styles['filter-selection-active']} ${styles['filter-selection']}`
+                                    : styles['filter-selection']
+                            }
+                            onClick={filterHandler}
+                            data-key="vegan"
                         >
                             <span>Vegan</span>
                         </div>
                         <div
-                            className={styles['filter-selection']}
-                            onClick={sortSelectionClickHandler}
+                            className={
+                                filterType === 'vegetarian'
+                                    ? `${styles['filter-selection-active']} ${styles['filter-selection']}`
+                                    : styles['filter-selection']
+                            }
+                            onClick={filterHandler}
+                            data-key="vegetarian"
                         >
                             <span>Vegetarian</span>
                         </div>
