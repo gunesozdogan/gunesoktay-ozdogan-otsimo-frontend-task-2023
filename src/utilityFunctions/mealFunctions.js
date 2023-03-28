@@ -27,8 +27,15 @@ export const getMealInfo = (meal, allIngredients) => {
         const ingredientOptions = ingredientInfo[0].options;
 
         ingredientOptions.forEach((option) => {
+            const plus =
+                option.quality === 'low'
+                    ? 0.1
+                    : option.quality === 'medium'
+                    ? 0.05
+                    : 0;
+
             prices[option.quality] +=
-                (option.price * ingredient.quantity) / 1000;
+                (option.price * ingredient.quantity) / 1000 + plus;
         });
     });
 
@@ -67,4 +74,34 @@ export const filterMeals = (menu, parameter) => {
             (meal) => !meal.info.groups.includes('non-vegetarian')
         );
     }
+};
+
+export const getMealByID = (menu, id) => {
+    return menu.filter((meal) => Number(meal.id) === Number(id));
+};
+
+export const calculatePrice = (selections) => {
+    const selectionsArray = Object.entries(selections);
+    let priceSum = 0;
+    let scoreSum = 0;
+
+    selectionsArray.forEach((ingredientInfo) => {
+        const ingredient = ingredientInfo[1];
+        const quantity = ingredient.quantity;
+        let quality = Number(ingredient.quality);
+        let price = (Number(ingredient.price) * quantity) / 1000;
+
+        console.log(ingredientInfo);
+        price =
+            quality === 30
+                ? price
+                : quality === 20
+                ? price + 0.05
+                : price + 0.1;
+
+        priceSum += price;
+        scoreSum = scoreSum + quality / selectionsArray.length;
+    });
+
+    return [priceSum, scoreSum];
 };

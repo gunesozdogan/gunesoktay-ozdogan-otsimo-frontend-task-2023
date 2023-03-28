@@ -41,7 +41,6 @@
     "prettier": {
         "singleQuote": true,
         "tabWidth": 4,
-        "singleAttributePerLine": true,
         "printWidth": 80
     }
 }

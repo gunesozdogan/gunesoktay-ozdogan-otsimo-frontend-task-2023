@@ -31,9 +31,11 @@
     justify-content: flex-end;
 }
 
-.sort-button span,
-.filter-button span {
-    padding: 1rem 2rem;
+.sort-button,
+.filter-button {
+    span {
+        padding: 1rem 2rem;
+    }
 }
 
 .sort-button:hover,
@@ -41,9 +43,11 @@
     color: #fff;
 }
 
-.sort-button:hover .svg,
-.filter-button:hover .svg {
-    stroke: #fff;
+.sort-button:hover,
+.filter-button:hover {
+    .svg {
+        stroke: #fff;
+    }
 }
 
 .svg {
@@ -91,8 +95,10 @@
     background-color: $main-font-color-dark;
 }
 
-.sort-selection svg {
-    fill: $helper-font-color;
+.sort-selection {
+    svg {
+        fill: $helper-font-color;
+    }
 }
 
 @media (max-width: 768px) {

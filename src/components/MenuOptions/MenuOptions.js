@@ -120,7 +120,7 @@ const MenuOptions = () => {
                                     : 'ascending'
                             }`}
                         >
-                            <span>Cheapest Price</span>
+                            <span>Lowest Price</span>
                             <img
                                 src={
                                     sortDirection === 'ascending'

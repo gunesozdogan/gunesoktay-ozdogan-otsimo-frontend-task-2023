@@ -1,0 +1,131 @@
+.container {
+  flex: 1;
+  margin: 10rem auto;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 6rem;
+  width: 80%;
+  padding: 4rem;
+  max-width: 140rem;
+}
+
+.upper-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  width: 100%;
+}
+.upper-container .meal-name {
+  color: #ff652f;
+  font-size: 5rem;
+}
+.upper-container .meal-quality-price {
+  color: #14a76c;
+  font-size: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 2rem;
+  width: 100%;
+}
+.upper-container .meal-quality-price .price-container,
+.upper-container .meal-quality-price .quality-score-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.lower-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 6rem;
+  width: 100%;
+}
+.lower-container .ingredients-header-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+}
+.lower-container .ingredients-header-container span {
+  font-size: 4rem;
+  border-bottom: 2px solid #14a76c;
+  color: #14a76c;
+  font-weight: normal;
+}
+.lower-container .ingredients-header-container .ingredient-quality-header {
+  border: none;
+  text-align: center;
+  font-size: 3rem;
+}
+.lower-container .ingredients-container {
+  width: 100%;
+  color: #ddd;
+  font-size: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 6rem;
+}
+.lower-container .ingredients-container .ingredient-container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.lower-container .ingredients-container .ingredient-container .ingredient-name {
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 0;
+}
+.lower-container .ingredients-container .ingredient-container .ingredient-name span {
+  padding: 0;
+  width: 15rem;
+}
+.lower-container .ingredients-container .ingredient-container .ingredient-quality-selection,
+.lower-container .ingredients-container .ingredient-container span {
+  padding: 2rem 1rem;
+  max-width: 25rem;
+  flex: 1;
+  text-align: center;
+}
+.lower-container .ingredients-container .ingredient-container .ingredient-quality-name {
+  max-width: 20rem;
+  text-align: center;
+}
+.lower-container .ingredients-container .ingredient-container .ingredient-quality-selection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #272727;
+  padding: 2rem 1rem;
+  height: 20rem;
+  cursor: pointer;
+  min-width: 14.5rem;
+}
+.lower-container .ingredients-container .ingredient-container .ingredient-quality-selection span:nth-child(2) {
+  font-size: 2.5rem;
+}
+.lower-container .ingredients-container .ingredient-container .ingredient-quality-selection:hover {
+  border: 1px solid #bf481f;
+}

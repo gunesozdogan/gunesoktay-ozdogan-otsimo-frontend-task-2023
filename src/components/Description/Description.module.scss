@@ -35,7 +35,9 @@
     min-width: 25rem;
 }
 
-.container li {
-    width: 100%;
-    @include flexbox(row, center, space-between);
+.container {
+    li {
+        width: 100%;
+        @include flexbox(row, center, space-between);
+    }
 }

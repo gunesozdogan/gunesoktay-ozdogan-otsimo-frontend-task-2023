@@ -1,11 +1,11 @@
 import Navbar from '../components/Navbar/Navbar';
 import Menu from '../components/Menu/Menu';
 
-const MenuPage = () => {
+const MenuPage = ({ menu }) => {
     return (
         <div className="outer-container">
             <Navbar />
-            <Menu />
+            <Menu menu={menu} />
         </div>
     );
 };

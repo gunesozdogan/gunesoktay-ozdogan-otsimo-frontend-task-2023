@@ -1,0 +1,108 @@
+@import '../../index.scss';
+
+.container {
+    flex: 1;
+    margin: 10rem auto;
+    background-color: $navbar-main-color;
+    @include flexbox(column, center, flex-start, 6rem);
+    width: 80%;
+    padding: 4rem;
+    max-width: 140rem;
+}
+
+.upper-container {
+    @include flexbox(column, center, space-between, 4rem);
+    width: 100%;
+
+    .meal-name {
+        color: $main-font-color;
+        font-size: 5rem;
+    }
+
+    .meal-quality-price {
+        color: $navbar-sec-color;
+        font-size: 3.5rem;
+        @include flexbox(column, flex-start, flex-start);
+        width: 100%;
+
+        .price-container,
+        .quality-score-container {
+            @include flexbox(row, center, center);
+        }
+    }
+}
+
+.lower-container {
+    @include flexbox(column, flex-start, flex-start, 6rem);
+    width: 100%;
+
+    .ingredients-header-container {
+        width: 100%;
+        @include flexbox(row, center, space-between, 0);
+
+        span {
+            font-size: 4rem;
+            border-bottom: 2px solid $navbar-sec-color;
+            color: $navbar-sec-color;
+            font-weight: normal;
+        }
+
+        .ingredient-quality-header {
+            border: none;
+            text-align: center;
+            font-size: 3rem;
+        }
+    }
+
+    .ingredients-container {
+        width: 100%;
+        color: $helper-font-color;
+        font-size: 2rem;
+        @include flexbox(column, flex-start, center, 6rem);
+
+        .ingredient-container {
+            width: 100%;
+            @include flexbox(row, center, space-between, 2rem);
+
+            .ingredient-name {
+                font-size: 2.5rem;
+                @include flexbox(column, flex-start, flex-start, 0);
+
+                span {
+                    padding: 0;
+                    width: 15rem;
+                }
+            }
+
+            .ingredient-quality-selection,
+            span {
+                padding: 2rem 1rem;
+                max-width: 25rem;
+                flex: 1;
+                text-align: center;
+            }
+
+            .ingredient-quality-name {
+                max-width: 20rem;
+                text-align: center;
+            }
+
+            .ingredient-quality-selection {
+                @include flexbox(column, center, center);
+                background-color: $main-background-color;
+                padding: 2rem 1rem;
+                height: 20rem;
+                cursor: pointer;
+                min-width: 14.5rem;
+
+                span:nth-child(2) {
+                    font-size: 2.5rem;
+                }
+            }
+
+            .ingredient-quality-selection:hover {
+                border: 1px solid $main-font-color-dark;
+            }
+        }
+    }
+}

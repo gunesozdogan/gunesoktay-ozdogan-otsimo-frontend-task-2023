@@ -1,31 +1,36 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Josefin Sans", "Fira Sans", sans-serif;
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
-  -moz-user-select: none; /* Old versions of Firefox */ /* Internet Explorer/Edge */
-  user-select: none; /* Non-prefixed version, currently
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', 'Fira Sans', sans-serif;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */ /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */ /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
              supported by Chrome, Edge, Opera and Firefox */
-  -webkit-tap-highlight-color: transparent;
+    -webkit-tap-highlight-color: transparent;
 }
 
 :root {
-  font-size: 62.5%;
+    font-size: 62.5%;
 }
 
 html {
-  overflow-x: hidden;
-  overflow-y: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
 
 .outer-container {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: space-between;
-  gap: 0;
-  background-color: #272727;
-  min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0;
+    background-color: #272727;
+    min-height: 100vh;
+}
+
+.selected {
+    background-color: #bf481f !important;
+    color: #fff !important;
 }
