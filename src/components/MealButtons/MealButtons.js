@@ -76,7 +76,6 @@ const MealButtons = ({ meal }) => {
                     Lowest Quality and Price
                 </button>
             </div>
-            <div className={styles['lower-button-container']}></div>
         </div>
     );
 };

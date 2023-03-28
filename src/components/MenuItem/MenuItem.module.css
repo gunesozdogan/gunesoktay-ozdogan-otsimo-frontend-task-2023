@@ -80,7 +80,8 @@
     width: 100%;
   }
   .ingredients-container {
-    grid-template-columns: repeat(3, auto);
+    align-items: start;
+    grid-template-columns: repeat(2, auto);
   }
   .price-container {
     align-self: flex-start;

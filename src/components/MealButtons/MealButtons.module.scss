@@ -6,7 +6,8 @@
 
     .upper-button-container,
     .lower-button-container {
-        @include flexbox(row, center, center);
+        width: 100%;
+        @include flexbox(row, stretch, space-between);
 
         button {
             background-color: $sec-font-color;
@@ -17,10 +18,31 @@
             border: 2px solid $sec-font-color;
             width: 20rem;
             cursor: pointer;
+            line-height: 2.5rem;
         }
 
         .active {
-            border: 2px solid $main-font-color-dark;
+            box-shadow: 2px 5px 15px 5px $main-font-color-dark;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .button-container {
+        width: 100%;
+
+        .upper-button-container {
+            flex-direction: column;
+            width: 100%;
+            align-items: center;
+
+            button {
+                width: 75%;
+                height: 6rem;
+                @include flexbox(row);
+                font-size: 1.8rem;
+                max-width: 50rem;
+            }
         }
     }
 }

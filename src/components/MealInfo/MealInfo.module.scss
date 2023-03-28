@@ -3,7 +3,7 @@
 .container {
     flex: 1;
     margin: 10rem auto;
-    background-color: $navbar-main-color;
+    box-shadow: 2px 2px 15px 5px $sec-font-color;
     @include flexbox(column, center, flex-start, 6rem);
     width: 80%;
     padding: 4rem;
@@ -89,7 +89,7 @@
 
             .ingredient-quality-selection {
                 @include flexbox(column, center, center);
-                background-color: $main-background-color;
+                background-color: #222;
                 padding: 2rem 1rem;
                 height: 20rem;
                 cursor: pointer;
@@ -102,6 +102,81 @@
 
             .ingredient-quality-selection:hover {
                 border: 1px solid $main-font-color-dark;
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        width: 90%;
+    }
+
+    .upper-container {
+        @include flexbox(column, center, space-between, 4rem);
+        width: 100%;
+
+        .meal-name {
+            color: $main-font-color;
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .meal-quality-price {
+            font-size: 2.5rem;
+            @include flexbox(column, flex-start, space-between);
+            width: 100%;
+            flex: 1;
+
+            .price-container,
+            .quality-score-container {
+                @include flexbox(row, center, space-between);
+                width: 100%;
+            }
+        }
+    }
+
+    .lower-container {
+        @include flexbox(column, flex-start, flex-start, 6rem);
+        width: 100%;
+
+        .ingredients-header-container {
+            span {
+                font-size: 3rem;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .ingredients-container {
+            width: 100%;
+            color: $helper-font-color;
+            font-size: 2rem;
+            @include flexbox(column, flex-start, center, 6rem);
+
+            .ingredient-container {
+                flex-direction: column;
+                align-items: stretch;
+
+                .ingredient-name {
+                    align-items: center;
+                }
+
+                .ingredient-quality-selection {
+                    width: 60%;
+                    height: 5rem;
+                    max-width: unset;
+                    align-self: center;
+                    min-width: 25rem;
+                    span {
+                        padding: 0rem;
+                        font-size: 1.8rem;
+                    }
+
+                    span:nth-child(2) {
+                        font-size: 2rem;
+                    }
+                }
             }
         }
     }

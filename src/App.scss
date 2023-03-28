@@ -28,4 +28,6 @@ html {
     @include flexbox(column, stretch, space-between, 0);
     background-color: $main-background-color;
     min-height: 100vh;
+    max-width: 100vw;
+    overflow-x: hidden;
 }

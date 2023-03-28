@@ -8,10 +8,11 @@
 }
 .button-container .upper-button-container,
 .button-container .lower-button-container {
+  width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  align-items: stretch;
+  justify-content: space-between;
   gap: 2rem;
 }
 .button-container .upper-button-container button,
@@ -24,8 +25,31 @@
   border: 2px solid #747474;
   width: 20rem;
   cursor: pointer;
+  line-height: 2.5rem;
 }
 .button-container .upper-button-container .active,
 .button-container .lower-button-container .active {
-  border: 2px solid #bf481f;
+  box-shadow: 2px 5px 15px 5px #bf481f;
+}
+
+@media (max-width: 1024px) {
+  .button-container {
+    width: 100%;
+  }
+  .button-container .upper-button-container {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+  }
+  .button-container .upper-button-container button {
+    width: 75%;
+    height: 6rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.8rem;
+    max-width: 50rem;
+  }
 }
