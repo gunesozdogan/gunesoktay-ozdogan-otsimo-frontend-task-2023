@@ -28,4 +28,3 @@ All the bonus parts are completed other than best quality with the given budget 
 <img src="/src/img/ss1.png">
 <img src="/src/img/ss2.png">
 <img src="/src/img/ss3.png">
-<img src="/src/img/ss4.png">
