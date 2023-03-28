@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/gunesoktay-ozdogan-otsimo-frontend-task-2023/static/css/main.ff243b4b.css",
+    "main.js": "/gunesoktay-ozdogan-otsimo-frontend-task-2023/static/js/main.b8241ee3.js",
+    "index.html": "/gunesoktay-ozdogan-otsimo-frontend-task-2023/index.html",
+    "static/media/nameAscending.svg": "/gunesoktay-ozdogan-otsimo-frontend-task-2023/static/media/nameAscending.c8cc5a0658ea42026e883e1dd27055a3.svg",
+    "static/media/nameDescending.svg": "/gunesoktay-ozdogan-otsimo-frontend-task-2023/static/media/nameDescending.005fb38b8a90cb0829e12b5335913824.svg",
+    "static/media/priceDescending.svg": "/gunesoktay-ozdogan-otsimo-frontend-task-2023/static/media/priceDescending.3be994161dc294264722c04722bd983b.svg",
+    "static/media/priceAscending.svg": "/gunesoktay-ozdogan-otsimo-frontend-task-2023/static/media/priceAscending.c9e5eead47838c4c3eaf9b14a0b29be4.svg",
+    "main.ff243b4b.css.map": "/gunesoktay-ozdogan-otsimo-frontend-task-2023/static/css/main.ff243b4b.css.map",
+    "main.b8241ee3.js.map": "/gunesoktay-ozdogan-otsimo-frontend-task-2023/static/js/main.b8241ee3.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ff243b4b.css",
+    "static/js/main.b8241ee3.js"
+  ]
+}
