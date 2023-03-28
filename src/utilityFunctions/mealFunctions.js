@@ -91,7 +91,6 @@ export const calculatePrice = (selections) => {
         let quality = Number(ingredient.quality);
         let price = (Number(ingredient.price) * quantity) / 1000;
 
-        console.log(ingredientInfo);
         price =
             quality === 30
                 ? price
@@ -104,4 +103,33 @@ export const calculatePrice = (selections) => {
     });
 
     return [priceSum, scoreSum];
+};
+
+export const getQualityPriceVersion = (parameter, meal, allIngredients) => {
+    const ingredientIndex = parameter === 'high' ? 0 : 2;
+    const ingredients = meal.ingredients;
+    const classes = [];
+    const allSelectedIngredients = [];
+
+    ingredients.forEach((ingredient, index) => {
+        const quantity = ingredient.quantity;
+        const info = getIngredientInfo(ingredient.name, allIngredients)[0]
+            .options[ingredientIndex];
+        const quality =
+            info.quality === 'low' ? 1 : info.quality === 'medium' ? 2 : 3;
+        const className = `${index}_${ingredient.name}_${info.name}_${info.price}_${quality}_${quantity}`;
+        const selectedIngredient = {
+            name: ingredient.name,
+            selection: {
+                name: info.name,
+                price: info.price,
+                quality: Number(quality) * 10,
+                quantity: Number(quantity),
+            },
+        };
+        classes.push(className);
+        allSelectedIngredients.push(selectedIngredient);
+    });
+
+    return [classes, allSelectedIngredients];
 };

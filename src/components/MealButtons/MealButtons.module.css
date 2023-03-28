@@ -1,0 +1,31 @@
+.button-container {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.button-container .upper-button-container,
+.button-container .lower-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.button-container .upper-button-container button,
+.button-container .lower-button-container button {
+  background-color: #747474;
+  padding: 2rem;
+  font-size: 2rem;
+  border: none;
+  color: #fff;
+  border: 2px solid #747474;
+  width: 20rem;
+  cursor: pointer;
+}
+.button-container .upper-button-container .active,
+.button-container .lower-button-container .active {
+  border: 2px solid #bf481f;
+}

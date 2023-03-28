@@ -1,0 +1,26 @@
+@import '../../index.scss';
+
+.button-container {
+    align-self: flex-start;
+    @include flexbox(column);
+
+    .upper-button-container,
+    .lower-button-container {
+        @include flexbox(row, center, center);
+
+        button {
+            background-color: $sec-font-color;
+            padding: 2rem;
+            font-size: 2rem;
+            border: none;
+            color: #fff;
+            border: 2px solid $sec-font-color;
+            width: 20rem;
+            cursor: pointer;
+        }
+
+        .active {
+            border: 2px solid $main-font-color-dark;
+        }
+    }
+}

@@ -32,5 +32,5 @@ html {
 
 .selected {
     background-color: #bf481f !important;
-    color: #fff !important;
+    color: #fff;
 }

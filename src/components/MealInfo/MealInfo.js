@@ -1,15 +1,16 @@
 import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+
+import MealButtons from '../MealButtons/MealButtons';
 import {
+    getIngredientInfo,
     calculatePrice,
     getMealByID,
 } from '../../utilityFunctions/mealFunctions';
-import { useEffect } from 'react';
-
 import { mealActions } from '../../store/mealSlice';
-import styles from './MealInfo.module.css';
-
-import { getIngredientInfo } from '../../utilityFunctions/mealFunctions';
 import toTitleCase from '../../utilityFunctions/helperFunctions';
+
+import styles from './MealInfo.module.css';
 
 const MealInfo = ({ id }) => {
     const dispatch = useDispatch();
@@ -40,8 +41,14 @@ const MealInfo = ({ id }) => {
     const ingredientSelectionHandler = (e) => {
         const selectedElement = e.target.closest('div');
         const className = selectedElement.className.split(' ')[1];
-        const [ingredientName, selectionName, price, quality, quantity] =
-            selectedElement.getAttribute('data-key').split('_');
+        const [
+            ingredientIndex,
+            ingredientName,
+            selectionName,
+            price,
+            quality,
+            quantity,
+        ] = selectedElement.getAttribute('data-key').split('_');
 
         document
             .querySelectorAll('.' + className)
@@ -54,7 +61,7 @@ const MealInfo = ({ id }) => {
                 name: ingredientName,
                 selection: {
                     name: selectionName,
-                    price,
+                    price: Number(price),
                     quality: quality * 10,
                     quantity: Number(quantity),
                 },
@@ -95,6 +102,7 @@ const MealInfo = ({ id }) => {
                         </span>
                     </div>
                 </div>
+                <MealButtons meal={mealInfo} />
             </div>
             <div className={styles['lower-container']}>
                 <div className={styles['ingredients-header-container']}>
@@ -123,9 +131,11 @@ const MealInfo = ({ id }) => {
                                         <div
                                             onClick={ingredientSelectionHandler}
                                             key={option.name}
-                                            data-key={`${name}_${option.name}_${
-                                                option.price
-                                            }_${3 - index}_${quantity}`}
+                                            data-key={`${infoIndex}_${name}_${
+                                                option.name
+                                            }_${option.price}_${
+                                                3 - index
+                                            }_${quantity}`}
                                             className={`${
                                                 styles[
                                                     'ingredient-quality-selection'
