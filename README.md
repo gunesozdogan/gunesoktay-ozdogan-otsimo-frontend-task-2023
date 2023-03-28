@@ -1,6 +1,7 @@
 <a href="https://gunesozdogan.github.io/gunesoktay-ozdogan-otsimo-frontend-task-2023/" name="demo">Live Demo</a>
 
 -   App screenshots are at the bottom.
+-   github page is not working since it is private repository.
 
 # What is this project?
 
