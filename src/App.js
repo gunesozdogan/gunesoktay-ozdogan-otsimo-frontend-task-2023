@@ -6,7 +6,7 @@ import { getMenu, getIngredients } from './utilityFunctions/API';
 import { getMealInfo } from './utilityFunctions/mealFunctions';
 import { menuActions } from './store/menuSlice';
 import { ingredientsActions } from './store/ingredientsSlice';
-
+import { Navigate } from 'react-router-dom';
 import './App.css';
 
 import MenuPage from './pages/MenuPage';
@@ -47,17 +47,15 @@ const App = () => {
     return displayedMenu.length ? (
         <Routes>
             <Route
-                path="/"
-                element={<WelcomePage />}
+                path="/gunesoktay-ozdogan-otsimo-frontend-task-2023"
+                element={<Navigate to="/" />}
             ></Route>
+            <Route path="/" element={<WelcomePage />}></Route>
             <Route
                 path="/menu"
                 element={<MenuPage menu={displayedMenu} />}
             ></Route>
-            <Route
-                path="/meal/:mealID"
-                element={<MealPage />}
-            ></Route>
+            <Route path="/meal/:mealID" element={<MealPage />}></Route>
         </Routes>
     ) : (
         ''
