@@ -3,6 +3,10 @@
 -   App screenshots are at the bottom.
 -   github page is not working since it is private repository.
 
+# How to Run the code?
+
+You can run the code with npm install command
+
 # What is this project?
 
 This is a fake restaurant system.
