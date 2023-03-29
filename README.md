@@ -5,7 +5,7 @@
 
 # How to Run the code?
 
-You can run the code with npm install command
+You can run the code with npm install command and then npm start to start the app.
 
 # What is this project?
 
