@@ -1,6 +1,11 @@
 <a href="https://gunesozdogan.github.io/gunesoktay-ozdogan-otsimo-frontend-task-2023/" name="demo">Live Demo</a>
 
 -   App screenshots are at the bottom.
+-   github page is not working since it is private repository.
+
+# How to Run the code?
+
+You can run the code with npm install command
 
 # What is this project?
 
@@ -27,4 +32,3 @@ All the bonus parts are completed other than best quality with the given budget 
 <img src="/src/img/ss1.png">
 <img src="/src/img/ss2.png">
 <img src="/src/img/ss3.png">
-<img src="/src/img/ss4.png">
